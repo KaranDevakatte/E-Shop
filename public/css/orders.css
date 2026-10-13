@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f8fc;
+    color: #1f2937;
+    padding-top: 65px;
+}
+
+.my-orders {
+    width: 88%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.my-orders > h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-card {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dfe8f2;
+    border-radius: 8px;
+}
+
+.product-image {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #e5eaf0;
+    border-radius: 6px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.product-details h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.product-details p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.product-details p:last-child {
+    color: #1677ff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.order-card > button {
+    padding: 9px 15px;
+    background-color: #ffffff;
+    color: #1677ff;
+    border: 1px solid #1677ff;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.no-orders {
+    width: 90%;
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #dfe8f2;
+    border-radius: 8px;
+}
+
+.no-orders h3 {
+    font-size: 22px;
+    color: #6b7280;
+}
+
+@media (max-width: 700px) {
+    .my-orders {
+        width: 94%;
+        margin-top: 30px;
+    }
+
+    .order-card {
+        grid-template-columns: 80px 1fr;
+        gap: 15px;
+    }
+
+    .product-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .order-card > button {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 500px) {
+    .order-card {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .order-card > button {
+        grid-column: auto;
+    }
+
+    .no-orders {
+        width: 94%;
+        margin-top: 70px;
+    }
+}

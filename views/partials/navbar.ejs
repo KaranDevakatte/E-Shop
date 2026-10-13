@@ -1,0 +1,17 @@
+<nav>
+    <div class="logo">
+        <i class="fa-brands fa-shopify"></i>
+    </div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/products">Products</a>
+        <a href="/cart">Cart</a>
+        <% if(user) { %>
+            <a href="/orders">Orders</a>
+            <a href="/users/logout">Logout (<%= user.name %>)</a>
+        <% } else { %>
+            <a href="/users/login">Login</a>
+            <a href="/users/signup">Signup</a>
+        <% } %>
+    </div>
+</nav>

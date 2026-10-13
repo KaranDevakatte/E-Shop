@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop - Cart</title>
+    <%- include("./partials/styles.ejs") %>
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+    <%- include("./partials/navbar.ejs") %>
+    <% if(cartItems.length>0) { %>
+    <main>
+        <section class="my-cart-section">
+            <h2>My Cart</h2>
+            <div class="cart-items">
+                <div class="cart-items-header">
+                    <p>Product</p>
+                    <p>Price</p>
+                    <p>Quantity</p>
+                    <p>SubTotal</p>
+                    <p>Action</p>
+                </div>
+                <% let total = 0; %>
+                <% for(let cartItem of cartItems) { %>
+                    <div class="cart-item">
+                        <div class="product-card">
+                            <img src="<%= cartItem.product.image %>" alt="product IMG" class="product-image">
+                            <p class="product-name"><%= cartItem.product.name %></p>
+                        </div>
+                        <p class="product-price">&#8377;<%= cartItem.product.price.toLocaleString('en-IN') %></p>
+                        <div class="quantity-control">
+                            <form method="post" action="/cart/<%= cartItem.product._id %>?_method=PATCH">
+                                <input type="hidden" name="action" value="decrease">
+                                <button <%= cartItem.quantity === 1 ? "disabled" : "" %>>-</button>
+                            </form>
+                            <span><%= cartItem.quantity %></span>
+                            <form method="post" action="/cart/<%= cartItem.product._id %>?_method=PATCH">
+                                <input type="hidden" name="action" value="increase">
+                                <button>+</button>
+                            </form>
+                        </div>
+                        <p class="product-subtotal">
+                            &#8377;<%= (cartItem.product.price * cartItem.quantity).toLocaleString('en-IN') %>
+                        </p>
+                        <% total += cartItem.product.price * cartItem.quantity; %>
+                        <form method="post" action="/cart/<%= cartItem.product._id %>?_method=DELETE">
+                            <button class="remove-btn">Remove</button>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
+            <p class="total-amount"><span>Total:</span> &#8377;<%= total.toLocaleString('en-IN') %></p>
+            <form method="post" action="/cart/orders" class="place-order-form">
+                <button class="place-order-btn">Place Order</button>
+            </form>
+        </section>
+    </main>
+    <% } else { %>
+        <div class="empty-cart">
+            <h2>Your cart is empty!</h2>
+        </div>
+    <% }%>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

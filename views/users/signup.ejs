@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop - Signup</title>
+    <link rel="stylesheet" href="/css/users/signup.css">
+    <%- include("../partials/styles.ejs") %>
+</head>
+<body>
+    <div class="signup-container">
+        <h3>Create Account</h3>
+        <p class="signup-subtitle">Join us and start shopping!</p>
+        <form method="post" action="/users" class="signup-form">
+            <div class="user-name">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="name" placeholder="Username">
+            </div>
+            <div class="user-email">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email address">
+            </div>
+            <div class="user-password">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" class="password">
+                <i class="fa-solid fa-eye eye"></i>
+            </div>
+            <div class="signup-btn">
+                <button>Sign Up</button>
+            </div>
+        </form>
+        <p class="signup-text">Already have an account? <a href="/users/login" class="user-login">Login</a></p>
+    </div>
+    <%- include("../partials/scripts.ejs") %>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop</title>
+    <%- include("./partials/styles.ejs") %>
+    <link rel="stylesheet" href="/css/success.css">
+</head>
+<body>
+    <%- include("./partials/navbar.ejs") %>
+    <main>
+        <section>
+            <div class="icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Order Placed!</h2>
+            <p>Your order has been placed successfully.</p>
+            <form method="get" action="/orders">
+                <button class="view-order-btn">View Orders</button>
+            </form>
+            <a href="/products">Continue Shopping</a>
+        </section>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

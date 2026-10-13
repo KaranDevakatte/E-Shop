@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop - Orders</title>
+    <%- include("./partials/styles.ejs") %>
+    <link rel="stylesheet" href="/css/orders.css">
+</head>
+<body>
+    <%- include("./partials/navbar.ejs") %>
+    <% if(orderItems.length>0) { %>
+    <main>
+        <section class="my-orders">
+            <h2>My Orders</h2>
+            <div class="order-items">
+                <% for(let orderItem of orderItems) { %>
+                    <div class="order-card">
+                        <div class="product-image">
+                            <img src="<%= orderItem.product.image %>" alt="product IMG">
+                        </div>
+                        <div class="product-details">
+                            <h3>Order #<%= orderItem._id %></h3>
+                            <p>Placed on: <%= orderItem.createdAt.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) %></p>
+                            <p><%= orderItem.product.name %> (x<%= orderItem.quantity %>)</p>
+                            <p>&#8377;<%= (orderItem.priceAtPurchase * orderItem.quantity).toLocaleString('en-IN') %></p>
+                        </div>
+                        <button>Order Placed</button>
+                    </div>
+                <% } %>
+            </div>
+        </section>
+    </main>
+    <% } else { %>
+        <div class="no-orders">
+            <h3>You have not placed any orders yet!</h3>
+        </div>
+    <% } %>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop - Product Details</title>
+    <%- include("../partials/styles.ejs") %>
+    <link rel="stylesheet" href="/css/products/view.css">
+</head>
+<body>
+    <%- include("../partials/navbar.ejs") %>
+    <main>
+        <section class="product-section">
+            <div class="product-image">
+                <img src="<%= product.image %>" alt="product IMG">
+            </div>
+            <div class="product-details">
+                <h2 class="product-name"><%= product.name %></h2>
+                <h2 class="product-price">&#8377;<%= product.price.toLocaleString('en-IN') %></h2>
+                <p><span>Category:</span> <%= product.category %></p>
+                <p><%= product.description %></p>
+                <div class="product-btns">
+                    <% if(isProductInCart) { %>
+                        <form method="get" action="/cart">
+                            <button class="go-to-cart-btn">Go to Cart</button>
+                        </form>
+                    <% } else { %>
+                        <form method="post" action="/cart/<%= product._id %>">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                    <% } %>
+                    <form method="post" action="/orders/<%= product._id %>">
+                        <button class="buy-now-btn">Buy Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>

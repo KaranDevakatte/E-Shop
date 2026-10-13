@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7fbff;
+    color: #172033;
+}
+
+.signup-container {
+    width: 400px;
+    margin: 55px auto 0;
+    padding: 35px;
+    background-color: #ffffff;
+    border: 1px solid #dfe8f2;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.signup-container h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.signup-subtitle {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Form */
+
+.signup-form {
+    width: 100%;
+}
+
+/* Input fields */
+
+.user-name,
+.user-email,
+.user-password {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe7ef;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+}
+
+.user-name i,
+.user-email i {
+    width: 45px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Password field */
+
+.user-password {
+    position: relative;
+}
+
+/* Lock icon */
+
+.user-password > i:first-child {
+    width: 45px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Input */
+
+.user-name input,
+.user-email input,
+.user-password input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #172033;
+}
+
+.user-name input::placeholder,
+.user-email input::placeholder,
+.user-password input::placeholder {
+    color: #94a3b8;
+}
+
+/* Password input needs space for eye icon */
+
+.user-password .password {
+    padding-right: 40px;
+}
+
+/* Eye icon */
+
+.user-password .eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    color: #64748b;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-password .eye:hover {
+    color: #1677ff;
+}
+
+/* Focus */
+
+.user-name:focus-within,
+.user-email:focus-within,
+.user-password:focus-within {
+    border-color: #1677ff;
+}
+
+/* Signup button */
+
+.signup-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.signup-btn button {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #1677ff;
+    border-radius: 5px;
+    background-color: #1677ff;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.signup-btn button:hover {
+    background-color: #0868e8;
+}
+
+/* Login link */
+
+.signup-text {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+.user-login {
+    color: #1677ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.user-login:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+    .signup-container {
+        width: 90%;
+        padding: 25px;
+    }
+}

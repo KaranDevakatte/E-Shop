@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7fbff;
+    color: #172033;
+}
+
+.login-container {
+    width: 400px;
+    margin: 65px auto 0;
+    padding: 35px;
+    background-color: #ffffff;
+    border: 1px solid #dfe8f2;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-container h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Login form */
+
+.login-form {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+/* Inputs */
+
+.user-email,
+.user-password {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe7ef;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+}
+
+/* Email icon */
+
+.user-email i {
+    width: 45px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Password container */
+
+.user-password {
+    position: relative;
+}
+
+/* Lock icon */
+
+.user-password > i:first-child {
+    width: 45px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Inputs */
+
+.user-email input,
+.user-password input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #172033;
+}
+
+.user-email input::placeholder,
+.user-password input::placeholder {
+    color: #94a3b8;
+}
+
+/* Password input - space for eye icon */
+
+.user-password .password {
+    padding-right: 40px;
+}
+
+/* Eye icon */
+
+.user-password .eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    color: #64748b;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-password .eye:hover {
+    color: #1677ff;
+}
+
+/* Focus */
+
+.user-email:focus-within,
+.user-password:focus-within {
+    border-color: #1677ff;
+}
+
+/* Login button */
+
+.login-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-btn button {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #1677ff;
+    border-radius: 5px;
+    background-color: #1677ff;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.login-btn button:hover {
+    background-color: #0868e8;
+}
+
+/* Signup */
+
+.signup-text {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+.user-signup {
+    color: #1677ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.user-signup:hover {
+    text-decoration: underline;
+}
+
+/* Error message */
+
+.error-message {
+    width: 400px;
+    margin: 25px auto 0;
+    padding: 12px 15px;
+    background-color: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 5px;
+    color: #be123c;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+    .login-container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .error-message {
+        width: 90%;
+    }
+}
